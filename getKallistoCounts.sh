@@ -5,7 +5,7 @@
 #each sample has its own sub-directory, and in each, the counts are in *_abundance.tsv
 
 
-############ inputs #############
+############ input variables #############
 #################################
 
 #the design should be something like this (tab-separated) :
@@ -15,230 +15,20 @@
 # O	cond2
 # P	cond2
 # ...
-#design="/media/marcgabriel/9d38aaa1-ce5d-4422-950f-0f083b797d13/MAT1_overexp_EPIMES/test1.tsv"
-#design="/home/marcgabriel/Desktop/test1.tsv"
-#design="/media/marcgabriel/homeborn/Dominika_miRNA_seq/kallisto_design.tsv"
-#design="/media/marcgabriel/homeborn/Dominika_snoRNA_seq/kallisto_design.tsv"
-#design="/media/marcgabriel/saylar4/Nouritza_TNBClncRNA/kept_design.tsv"
-#design="/media/marcgabriel/saylar4/Nouritza_PDX_TNBClncRNA/kept_design.tsv"
-#design="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/kallisto_design2.tsv"
-#design="/media/marcgabriel/saylar2/Nouritza_human_cell_lines/kallisto_design.tsv"
-#design="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode_and_repeats/design_tumor.tsv"
-#design="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode_and_repeats/design_FFPE.tsv"
-#design="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode32_transcripts/kallisto_design_transcripts.tsv"
-
-#design="/media/marcgabriel/saylar5/prostate_cell_lines/design.txt"
-
-#design="/media/marcgabriel/saylar5/tissues_to_use_as_control_for_urines/tissues_design.tsv"
-
-#design="/media/marcgabriel/saylar5/nuclear_cyto_prostate_samples_SRP199212/design.tsv"
-#design="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/kallisto_design_batch1And2_22_01_2021.tsv"
 #design="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/kallisto_transcripts_counts_sample.tsv"
-#design="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/Ciriquant_design.tsv"
-#design="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/kallisto_counts_gencode32_repeats_PNT2_PC3/kallisto_design_PNT2_PC3.tsv"
-#design="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode32_transcripts/all_ORFS/TransDecoder_output/uEVs_FFPE_celllines_and_associated_EVs_design.tsv"
-#design="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode32_transcripts/all_ORFS/TransDecoder_output/kallisto_counts_on_genes/riboseq_design.tsv"
-#design="/media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b49/urinary_EVs_clean_files_11_06_2021/kallisto_counts_6normaluEVs_6tumoruEVssamples/design_6NormaluEVs_6tumoruEVs.tsv"
-
-#design="/media/marcgabriel/saylar8/plasticity_analysis/fastq_files/39_samples_analysis_kallisto_design.tsv"
-#design="/media/marcgabriel/saylar8/plasticity_analysis/fastq_files/samples_analysis_kallisto_design_early_rec_vs_prolonged_surv.tsv"
-#design="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/kallisto_counts_gencode32_repeats_PNT2_PC3/kallisto_updated_design.tsv"
-
-#design="/media/marcgabriel/saylar9/circRNAs_20_uEV_samples_JEV_revision/circRNA_design_20_uEV_samples.tsv"
-
-#design="/media/marcgabriel/saylar8/Nouritza_EV_analysis/fastq_files/kallisto_desig.tsv"
-
-
-#SRR10261665_GSM4117331_RNAAtlas045_total_RNA & SRR10266661_GSM4117305_RNAAtlas036_total_RNA have an issue : all counts are 0 -> presence of adapters ? wrong lib type ?
-#design="/media/marcgabriel/saylar9/Nouritza_breast_cancer_cell_lines_P_mestdagh_total_and_polyA/kallisto_design.tsv"
-
-#design="/media/marcgabriel/saylar9/Nouritza_human_TNBClncRNA_validation_batchPart2/kallisto_design_batch_1_2_3.tsv"
-
-#design="/media/marcgabriel/saylar11/Nouritza_TNBCdocPDX/fastq_files/kallisto_design.tsv"
-
-#design="/media/marcgabriel/saylar10/Nouritza_TNBC_cell_lines/featurecounts_design.tsv"
-
-#design="/media/marcgabriel/saylar14/GTex_missing_DG_samples/449_missing_DG_samples/611_and_missing_DG_and_upto50_desc_unique_no4samplesWithBadRin.tsv"
-
-#design="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/kallisto_transcripts_counts_sample.tsv"
-
-#design="/media/marcgabriel/saylar11/Rocco_RIPseq_analysis/fastq_files/kallisto_design.tsv"
-
-
-#design="/media/marcgabriel/saylar9/urines_files_new_batches_04_04_2023/kallisto_design.tsv"
-
-design="/media/marcgabriel/saylar5/LNCaP_data/Rocco_LNCaP_GTex_kallisto_design.tsv"
 
 #reads path
-#reads_path="/media/marcgabriel/9d38aaa1-ce5d-4422-950f-0f083b797d13/MAT1_overexp_EPIMES/"
-#reads_path="/media/marcgabriel/SAMSUNG/Dominika_XRN1_26_samples_2018/"
-#reads_path="/media/marcgabriel/homeborn/Dominika_miRNA_seq/"
-#reads_path="/media/marcgabriel/homeborn/Dominika_snoRNA_seq/"
-#reads_path="/media/marcgabriel/saylar4/Nouritza_TNBClncRNA/"
-#reads_path="/media/marcgabriel/saylar4/Nouritza_PDX_TNBClncRNA/"
-#reads_path="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/"
-#reads_path="/media/marcgabriel/saylar2/Nouritza_human_cell_lines/ /media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/"
-
-
-#For FFPE files
-#reads_path="/media/marcgabriel/saylar4/urines_ffpe_files/fastq_files/"
-
-#For urine files
-#reads_path="/media/marcgabriel/saylar4/urines_files/"
-
-#reads_path="/media/marcgabriel/saylar5/prostate_cell_lines/"
-
-#reads_path="/media/marcgabriel/saylar4/urines_ffpe_files/fastq_files/ /media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/"
-
-#reads_path="/media/marcgabriel/saylar7/Hsieh_AC_GSE35469_PC3_cell_lines/trimmed_reads/"
-
-#reads_path="/media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b49/urinary_EVs_clean_files_11_06_2021/urinary_EVs_fastq_files/"
-
-#reads_path="/media/marcgabriel/saylar5/tissues_to_use_as_control_for_urines/"
-#reads_path="/media/marcgabriel/saylar5/nuclear_cyto_prostate_samples_SRP199212/"
-#reads_path="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/"
 #reads_path="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/"
-#reads_path="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/"
-#reads_path="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021"
-#reads_path="/media/marcgabriel/saylar8/plasticity_analysis/fastq_files/"
-#reads_path="/media/marcgabriel/saylar8/plasticity_analysis/fastq_files_polyA/"
-#reads_path="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/"
-#reads_path="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/"
-#reads_path="/media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b49/urinary_EVs_fastq_files/"
-#reads_path="/media/marcgabriel/saylar8/Nouritza_EV_analysis/fastq_files/"
-#reads_path="/media/marcgabriel/saylar9/Nouritza_breast_cancer_cell_lines_P_mestdagh_total_and_polyA/"
-#reads_path="/media/marcgabriel/saylar9/Nouritza_human_TNBClncRNA_validation_batchPart2/" #these reads are in /media/marcgabriel/saylar10/Nouritza_TNBC_all_fastq_batches/ now
-
-#reads_path="/media/marcgabriel/saylar11/Nouritza_TNBCdocPDX/fastq_files/"
-
-#reads_path="/media/marcgabriel/saylar10/Nouritza_TNBC_cell_lines/"
-
-#reads path for GTex alone
-#reads_path="/media/marcgabriel/saylar15/GTEx_trimmed_fastq_611_samples_and_up_to_50/ /media/marcgabriel/saylar14/GTex_missing_DG_samples/449_missing_DG_samples/ "
-
-#reads_path="/media/marcgabriel/saylar11/Rocco_RIPseq_analysis/fastq_files/"
-
-#reads_path="/media/marcgabriel/saylar9/urines_files_new_batches_04_04_2023/ /media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b491/urinary_EVs_fastq_files/"
-
-#reads path for GTex and Rocco lncap data
-reads_path="/media/marcgabriel/saylar15/GTEx_trimmed_fastq_611_samples_and_up_to_50/ /media/marcgabriel/saylar14/GTex_missing_DG_samples/449_missing_DG_samples/ /media/marcgabriel/saylar5/LNCaP_data/"
 
 #genome
-#/home/marcgabriel/Documents/gencode19/gencode19_only_official_chromosomes.fa
-#genome_fasta="/home/marcgabriel/Desktop/GFP.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode27lift37/all_genes.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode26/only_official_chr/genecode26_genes_fasta/all_genes.fa"
-#genome_fasta="/media/marcgabriel/Transcend/Dominika_smallRNAseq_adapted_annotation/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar4/Nouritza_PDX_TNBClncRNA/combined_annotations/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar4/Nouritza_PDX_TNBClncRNA/combined_annotations/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/Nouritza_TNBC_human_pre_R_vs_pre_PD_dekupk_results/all_genes_exons_and_introns__contigs_pre_R_vs_pre_PD__pre_PD_vs_post_PD.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode32/gencode32_genes_fasta_format/all_genes.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode32/gencode32_genes_fasta_format/all_genes.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode32/gencode32_genes_fasta_format/gencode32_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/gencode32_RepeatMasker.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode32/gencode.v32.transcripts_shortened_IDs.fa.gz"
-#genome_fasta="/media/marcgabriel/saylar4/Nouritza_combined_annotation_gencode32_lncipedia_fantomcat_mitranscriptome_human_TNBC_scallop/combined_annotation_gencode32_lncipedia_mitranscriptome_fantom_scallop_spikesERCC_4456740.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode26/gencode.v26.transcripts_shortened_name.fa"
-#genome_fasta="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/featurecounts_output_with_scallop_annot/DESeq2_results_with_scallop_annot_19_02_2021/intersection_of_comparisons/cyto/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/fasta_file_gencode26_DIS3_scallop/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar4/Nouritza_combined_annotation_gencode32_lncipedia_fantomcat_mitranscriptome_human_TNBC_scallop/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar7/Dominika_DIS3_analysis_22_03_2021/file.fa"
-#genome_fasta="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/fasta_for_kallisto/all_genes.fa"
-#genome_fasta="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_fasta_full_gene/all_genes.fa"
-
-#genome_fasta="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode32_transcripts/ORFs_analysis/TransDecoder_output/all_genes.facomplete_ORFs_transdecoder_genomic_coor_refined_CDS.fa"
-#genome_fasta="/home/marcgabriel/Documents/gencode32/gencode32_genes_fasta_format/gencode32_genes.fa"
-
-#genome_fasta="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_metatranscripts_introns_numbered/intron_numberd_for_kallisto/all_genes.fa"
-
-#genome_fasta="/media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b49/Dominika_riboseq_DIS3_diagenode_merged_runs_15_11_2021_and_16_12_2021/Dominika_ribotricer_analysis_gencode_scallop_eRNA_selected_length_from_unique_25_34nt_extendedStartCodon/ribotricer_gencode26_DIS3_scallop_HCT116_eRNAs_conservative_refined_candidate_orfs.fa"
-
 #genome_fasta="/media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b49/Dominika_riboseq_DIS3_diagenode_merged_runs_15_11_2021_and_16_12_2021/Dominika_ribotricer_analysis_gencode_scallop_eRNA_selected_length_from_unique_25_34nt_extendedStartCodon/ORFs_in_fasta_format/gencode26_scallop_eRNA_ORFs_extendedStartCodon.fa"
 
-
-#genome_fasta="/media/marcgabriel/saylar8/Rocco_cut_and_run_analysis/gencode32_scallop_LNCaP_complete_27102021_transcripts.fa"
-
-#genome_fasta="/media/marcgabriel/saylar5/LNCaP_data/gencode32_genes_and_PROCA11.fa"
-
-genome_fasta="/media/marcgabriel/saylar5/LNCaP_data/fasta_from_LNCaP_complete_27102021/all_genes.fa"
-
-
 #output files
-#counter_outputs="/media/marcgabriel/9d38aaa1-ce5d-4422-950f-0f083b797d13/MAT1_overexp_EPIMES/GFP_analysis"
-#counter_outputs="/media/marcgabriel/9d38aaa1-ce5d-4422-950f-0f083b797d13/oneTestAmongOthers"
-#counter_outputs="/media/marcgabriel/homeborn/Dominika_miRNA_seq/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/homeborn/Dominika_snoRNA_seq/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar4/Nouritza_TNBClncRNA/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar4/Nouritza_PDX_TNBClncRNA/kallisto_counts2/"
-#counter_outputs="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/kallisto_counts2/"
-#counter_outputs="/media/marcgabriel/saylar2/Nouritza_human_TNBClncRNA/kallisto_counts2/"
-#counter_outputs="/media/marcgabriel/saylar2/Nouritza_human_cell_lines/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar2/Nouritza_human_genes_contigs_pre_R_vs_pre_PD__pre_PD_vs_post_PD/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode_and_repeats/"
-#counter_outputs="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode32_transcripts/"
-#counter_outputs="/media/marcgabriel/saylar5/prostate_cell_lines/kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar5/tissues_to_use_as_control_for_urines/kallisto_counts/"
-
-#counter_outputs="/media/marcgabriel/saylar5/tissues_to_use_as_control_for_urines/kallisto_counts_gencode32_RepeatMasker/"
-#counter_outputs="/media/marcgabriel/saylar5/nuclear_cyto_prostate_samples_SRP199212/prostate_cyto_nuc_kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar5/nuclear_cyto_prostate_samples_SRP199212/prostate_cyto_nuc_kallisto_counts2/"
-#counter_outputs="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/kallisto_counts_batch1And2_22_01_2021/"
-#counter_outputs="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/featurecounts_output_with_scallop_annot/DESeq2_results_with_scallop_annot_19_02_2021/intersection_of_comparisons/cyto/scallop_final_common_transcripts_cyto_kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/fasta_file_gencode26_DIS3_scallop/"
-#counter_outputs="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/gencode32_repeats_kallisto_counts/"
-#counter_outputs="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/kallisto_counts_batch1And2_22_01_2021_2/"
-#counter_outputs="/media/marcgabriel/saylar7/Dominika_DIS3_analysis_22_03_2021/gencode_and_scallop_transcripts_counts/"/media/marcgabriel/saylar9/Nouritza_breast_cancer_cell_lines_P_mestdagh_total_and_polyA/
-#counter_outputs="/media/marcgabriel/saylar7/Anna_EVs_prostate_cell_lines_05_02_2021/kallisto_counts_gencode32_repeats_PNT2_PC3/"
-#counter_outputs="/media/marcgabriel/saylar7/Nouritza_human_cell_lines/kallisto_counts_gencode_scallop/"
-#counter_outputs="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/fasta_for_kallisto/"
-#counter_outputs="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/fasta_for_kallisto_full_gene/"
-#counter_outputs="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/kallisto_counts_gencode32_transcripts/ORFs_analysis/kallisto_counts_riboseq_ORFs/"
-#counter_outputs="/media/marcgabriel/dd42f9e0-f4a1-4604-a0dc-c8768c723b49/urinary_EVs_clean_files_11_06_2021/kallisto_counts_6normaluEVs_6tumoruEVssamples/"
-#counter_outputs="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_metatranscripts_introns_numbered/intron_numberd_for_kallisto/kallisto_index_separate_introns_of_metatranscript/"
-#counter_outputs="/media/marcgabriel/saylar8/plasticity_analysis/kallisto_counts2/"
-
-#counter_outputs="/media/marcgabriel/saylar8/plasticity_analysis/kallisto_counts_early_rec_vs_prolonged_surv/"
-#counter_outputs="/media/marcgabriel/saylar8/plasticity_analysis/kallisto_counts_polyA/"
-#counter_outputs="/media/marcgabriel/saylar2/FFPE_vs_Urines_DESEq2/genes_expression2/kallisto_counts_on_transcripts"
-
-#counter_outputs="/media/marcgabriel/saylar9/circRNAs_20_uEV_samples_JEV_revision/kallisto_counts_gencode_repeats/"
-
-#counter_outputs="/media/marcgabriel/saylar8/Nouritza_EV_analysis/kallisto_counts_EVs/"
-
-#counter_outputs="/media/marcgabriel/saylar9/Nouritza_breast_cancer_cell_lines_P_mestdagh_total_and_polyA/kallisto_counts/"
-
-#counter_outputs="/media/marcgabriel/saylar9/Nouritza_human_TNBClncRNA_validation_batchPart2/kallisto_counts/"
-
-#counter_outputs="/media/marcgabriel/saylar11/Nouritza_TNBCdocPDX/kallisto_counts/"
-
-#counter_outputs="/media/marcgabriel/saylar10/Nouritza_TNBC_cell_lines/kallisto_counts/"
-
 #counter_outputs="/media/marcgabriel/saylar17/Dominika_GTEX_kallisto_counts_ribotricer_gencode26_DIS3_scallop_HCT116_eRNAs_conservative_refined_candidate_orfs/"
 
-#counter_outputs="/media/marcgabriel/saylar15/Dominika_GTEX_kallisto_counts_ribotricer_gencode26_DIS3_scallop_HCT116_eRNAs_conservative/"
-
-#counter_outputs="/media/marcgabriel/saylar11/Rocco_RIPseq_analysis/Rocco_RIP_seq_kallisto_transcripts_counts/"
-
-#counter_outputs="/media/marcgabriel/saylar9/Anna_uEVs_healthy_and_tumor_kallisto_counts/"
-
-counter_outputs="/media/marcgabriel/saylar5/LNCaP_data/kallisto_GTex_and_LNCap_counts/"
-
-
-
-
-
+#not used anymore (unless pseudomapping is "on")
 chrom_size="/home/marcgabriel/Documents/gencode32/chrom_size.tsv"
-
-#input_gff="/media/marcgabriel/saylar4/Nouritza_PDX_TNBClncRNA/combined_annotations/combined_annotation_gencode32_lncipedia_mitranscriptome_fantom.gff"
-#input_gff="/media/marcgabriel/saylar4/Nouritza_human_TNBClncRNA/Nouritza_TNBC_human_pre_R_vs_pre_PD_dekupk_results/combined_annotation_Genelvl__contigs_pre_R_vs_pre_PD__pre_PD_vs_post_PD.gff"
-
 input_gff="/home/marcgabriel/Documents/gencode32/gencode.v32.annotation_sorted.gff3"
-
-#input_gff="/media/marcgabriel/saylar4/Nouritza_combined_annotation_gencode32_lncipedia_fantomcat_mitranscriptome_human_TNBC_scallop/combined_annotation_gencode32_lncipedia_mitranscriptome_fantom.gff"
-
-#input_gff="/media/marcgabriel/saylar8/Rocco_cut_and_run_analysis/gencode32_scallop_LNCaP_complete_27102021.gff"
-
 
 #e.g : pre_R_1_, post_PD_1_
 #separator_after_file_name="_"
